@@ -1,0 +1,16 @@
+{
+  "name": "crawler-robots",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "start": ""
+  },
+  "author": "Lucas Teles (lucas.teles@fluig.com)",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "cheerio-tableparser": "^1.0.1",
+    "puppeteer": "0.13.0"
+  }
+}
