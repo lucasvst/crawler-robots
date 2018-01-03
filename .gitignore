@@ -1,4 +1,4 @@
 node_modules/
 
-*/*.js.pdf
-*/*.js.json
+robots/**/*.js.pdf
+robots/**/*.js.json

@@ -7,7 +7,7 @@ const writeData = data => {
     const fs = require('fs');
 
     fs.writeFile(
-        `${path.basename(__filename)}.json`,
+        `${process.argv[1]}.json`,
         JSON.stringify(data, null, 2),
         err => console.log
     );
@@ -24,7 +24,7 @@ const run = async (url, cbk) => {
     await page.goto(url);
 
     /* SCREENSHOT */
-    await page.pdf({path: `./${path.basename(__filename)}.pdf`});
+    await page.pdf({path: `${process.argv[1]}.pdf`});
 
     /* EXTRACT DATA */
     const rows = cbk(cheerio.load(await page.content()));

@@ -1,4 +1,4 @@
-const run = require('./../../core/index');
+const run = require('./../../core/engine');
 
 run('http://www.rionegrinho.sc.gov.br/licitacao', $ => {
 
