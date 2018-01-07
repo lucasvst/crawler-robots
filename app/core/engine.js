@@ -2,16 +2,7 @@ const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
 const path = require('path');
 
-const writeData = data => {
-
-    const fs = require('fs');
-
-    fs.writeFile(
-        `${process.argv[1]}.json`,
-        JSON.stringify(data, null, 2),
-        err => console.log
-    );
-}
+const write = require('./writer');
 
 const run = async (url, cbk) => {
 
@@ -24,13 +15,13 @@ const run = async (url, cbk) => {
     await page.goto(url);
 
     /* SCREENSHOT */
-    await page.pdf({path: `${process.argv[1]}.pdf`});
+    // await page.pdf({path: `${process.argv[1]}.pdf`});
 
     /* EXTRACT DATA */
     const rows = cbk(cheerio.load(await page.content()));
 
     /* WRITE DATA */
-    writeData(rows);
+    write(rows);
 
     /* END BROWSER */
     browser.close();
